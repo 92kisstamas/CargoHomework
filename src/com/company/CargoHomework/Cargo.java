@@ -11,8 +11,12 @@ public class Cargo {
     private String type;
     private double value;
 
-    public int getGrossValue () {
-        return 0;
+    public double getGrossValue (double limit, double percent) {
+        if (value > limit) {
+            return (limit + (value - limit) * percent);
+        } else {
+            return value;
+        }
     }
 
     public Cargo() {
